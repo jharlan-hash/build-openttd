@@ -5,6 +5,11 @@ read -r FOLDER_NAME
 
 start=`date +%s`
 
+chmod a+x openttd.sh || exit 1
+INSTALL_PATH=$(pwd)
+
+cd
+
 if [[ -z "$FOLDER_NAME" ]]; then
     echo "Folder name cannot be empty. Exiting."
     exit 1
@@ -14,7 +19,7 @@ LIBRARY_PATH="/Users/$USER/Library/$FOLDER_NAME"
 HOMEBREW_PATH="$LIBRARY_PATH/homebrew"
 
 echo "export PATH=\"$HOMEBREW_PATH/bin:\$PATH\"" >> "/Users/$USER/.zshrc"
-echo "alias openttd=\"$LIBRARY_PATH/OpenTTD/build/openttd\"" >> "/Users/$USER/.zshrc"
+echo "alias openttd=\"$INSTALL_PATH/openttd.sh $FOLDER_NAME\"" >> "/Users/$USER/.zshrc"
 
 source ~/.zshrc
 
