@@ -1,4 +1,4 @@
-# build-openttd - An easy way to build OpenTTD from source!
+# build-openttd - The easiest way to build OpenTTD from source!
 
 ## Features
 · Fast - Uses Ninja, one of the fastest available C/C++ compilers  
